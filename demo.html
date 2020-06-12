@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+	<title>More than just progress | CSS + JS + SVG Concept</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<link href="styles.css" rel="stylesheet"/>
+	<script src="demo.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+<div class="progress-container">
+<svg width="100%" viewBox="0 0 177.2 107.04">
+ <g transform="translate(-2.2731 -187.82)">
+  <path class="skeleton" d="m2.4054 294.86v-37.15h26.192v13.363h26.994v-69.757h25.123v81.25h26.994v-48.376h20.312v26.46h24.589v-72.697h26.727v89.535h-6.4145"/>
+  
+  <path class="progress" d="m2.4054 294.86v-37.15h26.192v13.363h26.994v-69.757h25.123v81.25h26.994v-48.376h20.312v26.46h24.589v-72.697h26.727v89.535h-6.4145"/>
+	
+  <path class="pskeleton" d="m2.4054 294.86v-37.15h26.192v13.363h26.994v-69.757h25.123v81.25h26.994v-48.376h20.312v26.46h24.589v-72.697h26.727v89.535h-6.4145"/>
+ </g>
+</svg>
+</div>
+<DIV class="control-container">
+<input type="range" value="0" step="0.5" max="100" oninput="update(this.value)"/>
+<button onclick="document.body.classList.toggle('dark')">TURN OFF LIGHTS</button>
+<button onclick="progress_path.classList.toggle('marquee')">MARQUEE</button>
+</DIV>
+</div>
+
+</body>
+</html>

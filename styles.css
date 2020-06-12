@@ -1,0 +1,178 @@
+/*
+   More than just progress!
+   A concept of vector progress bars
+
+   #shadowproject
+   
+   Version 1.0
+   Last modified: June 12th, 2020 @ 6:18 PM
+
+   MIT License, see LICENSE for details about
+   modification and distribution policy.
+
+   Please don't remove this notice if you're
+   using this file or others in the package included.
+
+   Author: Shadow Scientist (https://github.com/Shadow-Scientist)
+
+   copyright (c) Shadow Scientist, 2019-20
+   all rights reserved.
+
+   +--------------------
+   ¦  ######  ######   ¦
+   |  ##      ##       |
+   ¦  ######  ######   ¦
+   |      ##      ##   |
+   ¦  ######  ######   ¦
+   --------------------+
+*/
+
+body{
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	background:rgb(240,240,240);
+	width:100vw;
+	height:100vh;
+}
+
+body.dark{
+	background:rgb(44,45,49);
+}
+
+body.dark button{color:white}
+body.dark input[type="range"]{
+	background-color:rgba(255,255,255,0.1);
+}
+
+.container{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	/*background-color:skyblue;*/
+	width:1000px;
+	height:600px;
+}
+
+.progress-container{
+	position:absolute;
+	left:0px;
+	top:50%;
+	width:600px;
+	/*background-color:blue;*/
+	transform:translateY(-50%);
+}
+
+.progress-container svg{
+	overflow:visible;
+}
+.progress-container svg path{
+	fill:none;
+	stroke:rgb(0,120,255);
+	stroke-width:4px;
+	stroke-linecap:round;
+	stroke-linejoin:round;
+}
+
+.progress-container .skeleton,
+.progress-container .pskeleton{
+	stroke-width:1px;
+	stroke-opacity:0.3;
+	stroke-dasharray:6px;
+	animation:march linear 2s forwards infinite;
+}
+
+@keyframes march{
+	to{stroke-dashoffset:48px;/*perfect!*/}
+}
+
+.progress-container .skeleton{
+	stroke:rgb(0,0,0);
+}
+
+.progress-container .pskeleton{
+	stroke:rgb(255,255,255);
+}
+
+.progress-container .progress{
+	stroke-dasharray:var(--total, 622px);
+	stroke-dashoffset:var(--total, 622px);
+	transition:all ease 0.8s;
+}
+
+.progress-container .progress.marquee{
+	animation:marquee linear 4s forwards infinite;
+}
+
+@keyframes marquee{
+	from{stroke-dasharray:50px var(--total);stroke-dashoffset:50px}
+	to{stroke-dasharray:50px var(--total);stroke-dashoffset:calc(var(--total) * -1)}
+}
+
+.control-container{
+	position:absolute;
+	right:0px;
+	width:310px;
+	top:50%;
+	transform:translateY(-50%);
+	/*background-color:red;*/
+}
+
+.control-container input[type="range"],
+.control-container button
+{
+	display:block;
+	outline:none;
+	position:relative;
+}
+
+.control-container input[type="range"]{
+	-webkit-appearance:none;
+	appearance:none;
+	margin:44px 0;
+	width:100%;
+	left:-1px;
+	height:5px;
+	background-color:rgba(0,0,0,0.24);
+	border-radius:5px;
+}
+
+.control-container input[type="range"]::-moz-range-thumb{
+	-webkit-appearance:none;
+	appearance:none;
+	width:26px;
+	height:26px;
+	background:rgb(0,120,255);
+	border-radius:50%;
+	border:0;
+	transition:all ease 0.3s;
+	box-shadow:0 0 0 1px transparent;
+}
+
+.control-container input[type="range"]:active::-moz-range-thumb{
+	box-shadow:0 0 0 10px rgba(0,120,255,0.24);
+}
+
+.control-container button{
+	margin:18px 0;
+	padding:10px 30px;
+	background:rgba(0,0,0,0.25);
+	border:0;
+	font-family:'Roboto', sans serif;
+	font-size:18px;
+	color:black;
+	border-radius:4px;
+	transition:all ease 0.2s;
+}
+
+.control-container button:hover{
+	box-shadow:5px 5px 0 0px rgba(0,0,0,0.28);
+	background:rgba(0,0,0,0.11);
+}
+
+.control-container button:active{
+	background:rgb(0,120,255);
+	color:white;
+	transform:translateY(5px) scale(0.95);
+}
