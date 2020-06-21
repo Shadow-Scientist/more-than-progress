@@ -1,3 +1,4 @@
+// more-than-progress | MIT License | @author: https://github.com/Shadow-Scientist
 var progress_path, total_length;
 
 function init(){
@@ -8,9 +9,7 @@ function init(){
 
 function update(x)
 {
-	progress_path.style.strokeDashoffset = (total_length - (total_length*(x/100))) +'px'
+	progress_path.style.strokeDashoffset = (total_length - (total_length*(x/100))) +'px';
 }
 
 window.addEventListener('load', function(){init()});
-
-/*js job done!*/
