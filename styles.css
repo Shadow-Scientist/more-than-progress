@@ -1,31 +1,4 @@
-/*
-   More than just progress!
-   A concept of vector progress bars
-
-   #shadowproject
-   
-   Version 1.0
-   Last modified: June 12th, 2020 @ 6:18 PM
-
-   MIT License, see LICENSE for details about
-   modification and distribution policy.
-
-   Please don't remove this notice if you're
-   using this file or others in the package included.
-
-   Author: Shadow Scientist (https://github.com/Shadow-Scientist)
-
-   copyright (c) Shadow Scientist, 2019-20
-   all rights reserved.
-
-   +--------------------
-   ¦  ######  ######   ¦
-   |  ##      ##       |
-   ¦  ######  ######   ¦
-   |      ##      ##   |
-   ¦  ######  ######   ¦
-   --------------------+
-*/
+/*more-than-progress | MIT License | https://github.com/Shadow-Scientist*/
 
 body{
 	padding:0;
